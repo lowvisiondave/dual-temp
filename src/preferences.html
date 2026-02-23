@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'">
+  <title>DualTemp Preferences</title>
+  <link rel="stylesheet" href="preferences.css">
+</head>
+<body>
+  <form id="prefs-form">
+    <fieldset>
+      <legend>Refresh Interval</legend>
+      <label><input type="radio" name="refreshInterval" value="5"> 5 minutes</label>
+      <label><input type="radio" name="refreshInterval" value="10"> 10 minutes</label>
+      <label><input type="radio" name="refreshInterval" value="30"> 30 minutes</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Temperature Order</legend>
+      <label><input type="radio" name="tempOrder" value="CF"> °C / °F</label>
+      <label><input type="radio" name="tempOrder" value="FC"> °F / °C</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Menubar Icon</legend>
+      <div class="icon-options">
+        <label class="icon-option">
+          <input type="radio" name="iconStyle" value="thermometer">
+          <img src="../assets/icons/thermometer/iconTemplate@2x.png" width="32" height="32" alt="Thermometer">
+          <span class="icon-label">Thermometer</span>
+        </label>
+        <label class="icon-option">
+          <input type="radio" name="iconStyle" value="sun-cloud">
+          <img src="../assets/icons/sun-cloud/iconTemplate@2x.png" width="32" height="32" alt="Sun & Cloud">
+          <span class="icon-label">Sun &amp; Cloud</span>
+        </label>
+        <label class="icon-option">
+          <input type="radio" name="iconStyle" value="gauge">
+          <img src="../assets/icons/gauge/iconTemplate@2x.png" width="32" height="32" alt="Gauge">
+          <span class="icon-label">Gauge</span>
+        </label>
+        <label class="icon-option">
+          <input type="radio" name="iconStyle" value="text-only">
+          <span class="icon-text-preview">T°</span>
+          <span class="icon-label">Text Only</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Location</legend>
+      <label for="manualCity">City (leave blank for auto-detect)</label>
+      <input type="text" id="manualCity" name="manualCity" placeholder="e.g. Tokyo">
+    </fieldset>
+
+    <fieldset>
+      <label><input type="checkbox" id="launchAtLogin" name="launchAtLogin"> Launch at login</label>
+      <label><input type="checkbox" id="showTomorrow" name="showTomorrow"> Show tomorrow's forecast</label>
+    </fieldset>
+
+    <div class="buttons">
+      <button type="button" id="cancel-btn">Cancel</button>
+      <button type="submit" id="save-btn">Save</button>
+    </div>
+  </form>
+  <script src="preferences-renderer.js"></script>
+</body>
+</html>

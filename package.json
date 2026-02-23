@@ -1,0 +1,40 @@
+{
+  "name": "dual-temp",
+  "version": "1.0.0",
+  "description": "macOS menu bar app displaying temperature in both °C and °F",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac",
+    "generate-icons": "node scripts/generate-icons.mjs"
+  },
+  "build": {
+    "appId": "com.dualtemp.app",
+    "productName": "DualTemp",
+    "mac": {
+      "category": "public.app-category.weather",
+      "icon": "assets/app-icon.png",
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "target": "dmg",
+      "extendInfo": {
+        "LSUIElement": true
+      }
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^11.0.2"
+  },
+  "devDependencies": {
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1",
+    "sharp": "^0.34.5"
+  }
+}
