@@ -2,8 +2,9 @@
 
 A macOS menu bar app that displays the current temperature in both Celsius and Fahrenheit.
 
-![DualTemp menu bar](assets/screenshot-menubar.png)
-![DualTemp dropdown](assets/screenshot-dropdown.png)
+![DualTemp app icon](assets/app-icon.png)
+
+![DualTemp in action](assets/screenshot.png)
 
 ## Features
 
